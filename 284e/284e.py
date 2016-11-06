@@ -7,6 +7,7 @@ import re
 
 dictionary = set(line.strip() for line in open('enable1.txt'))
 
+
 def swype_words(seq):
 	for d in dictionary:
 		if len(d) < 5:
@@ -18,6 +19,7 @@ def swype_words(seq):
 		d_no_reps = re.sub(r'([a-z])\1', r'\1', d)
 		if re.search('.*?'.join([l for l in d_no_reps]), seq):
 			yield d
+
 
 inputs = '''qwertyuytresdftyuioknn
 gijakjthoijerjidsdfnokg'''

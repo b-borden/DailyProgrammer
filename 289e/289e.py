@@ -11,6 +11,7 @@ from httpcache import CachingHTTPAdapter
 s = requests.Session()
 s.mount('http://', CachingHTTPAdapter())
 
+
 def dmg_mult(attack):
 	atk_types, def_types = (types.split() for types in re.split('\s*->\s*', attack))
 
@@ -34,4 +35,3 @@ atks = '''fire -> grass
 
 for atk in atks.splitlines():
 	print('%.gx' % dmg_mult(atk))
-

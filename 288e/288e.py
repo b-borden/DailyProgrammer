@@ -5,7 +5,9 @@
 
 import re
 from nltk.corpus import stopwords
+
 stop_set = set(stopwords.words('english'))
+
 
 def remove_duplicates(_list):
 	out = []
@@ -13,6 +15,7 @@ def remove_duplicates(_list):
 		if x not in out:
 			out.append(x)
 	return out
+
 
 def alliteration(s):
 	s = re.sub('[^A-Za-z_ ]', '', s)

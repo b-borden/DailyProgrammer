@@ -8,6 +8,7 @@ def reverse_fact(n):
 		factor += 1
 	return 'NONE'
 
+
 print(reverse_fact(3628800))
 print(reverse_fact(479001600))
 print(reverse_fact(6))
