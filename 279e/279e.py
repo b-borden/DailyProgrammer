@@ -12,13 +12,13 @@ def uuencode(msg):
 	bytes = str.encode(msg)
 	# Pad to an even multiple of 3 bytes with zeros
 	bytes += b'0' * (3 - (len(bytes) % 3))
-	uuencoded = ''.join([binascii.b2a_uu(byte_chunk).decode() for byte_chunk in list(chunk(bytes, 45))])
+	uuencoded = ''.join([binascii.b2a_uu(byte_chunk).decode() for byte_chunk in chunk(bytes, 45)])
 
 	return uuencoded.strip()
 
 def uudecode(msg):
-	pass
-	#return binascii.a2b_uu()
+	for line in msg.splitlines():
+		pass
 
 uu1 = uuencode('Cat')
 uu2 = uuencode('''I feel very strongly about you doing duty. Would you give me a little more documentation about your reading in French? I am glad you are happy — but I never believe much in happiness. I never believe in misery either. Those are things you see on the stage or the screen or the printed pages, they never really happen to you in life.''')
