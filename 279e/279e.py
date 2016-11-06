@@ -11,7 +11,7 @@ def chunk(e, _size):
 def uuencode(msg):
 	bytes = str.encode(msg)
 	# Pad to an even multiple of 3 bytes with zeros
-	bytes += b'0' * (3 - (len(bytes) % 3))
+	bytes += b'0' * ((3 - (len(bytes) % 3)) % 3)
 	uuencoded = ''.join([binascii.b2a_uu(byte_chunk).decode() for byte_chunk in chunk(bytes, 45)])
 
 	return uuencoded.strip()
