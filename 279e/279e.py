@@ -13,10 +13,10 @@ def uuencode(msg, filename):
 	# Pad to an even multiple of 3 bytes with zeros
 	bytes += b'0' * (3 - (len(bytes) % 3))
 	uuencoded = ''.join([binascii.b2a_uu(byte_chunk).decode() for byte_chunk in list(chunk(bytes, 45))])
-	print([binascii.b2a_uu(byte_chunk).decode() for byte_chunk in list(chunk(bytes, 45))])
 
 	return 'begin 644 ' + filename + '\n' + uuencoded + '`'
 
 
 print(uuencode('Cat', 'cat.txt'))
 print(uuencode('''I feel very strongly about you doing duty. Would you give me a little more documentation about your reading in French? I am glad you are happy — but I never believe much in happiness. I never believe in misery either. Those are things you see on the stage or the screen or the printed pages, they never really happen to you in life.''', 'file.txt'))
+
