@@ -1,8 +1,8 @@
 import re
 
 def find_anagram(inputs):
-	phrases = inputs.lower().split('?')
-	if sorted(re.sub(r'\W', '', phrases[0])) == sorted(re.sub(r'\W', '', phrases[1])):
+	l,r = inputs.lower().split('?')
+	if sorted(re.sub(r'\W', '', l)) == sorted(re.sub(r'\W', '', r)):
 		return re.sub('\?', 'is an anagram of', inputs)
 	else:
 		return re.sub('\?', 'is NOT an anagram of', inputs)
